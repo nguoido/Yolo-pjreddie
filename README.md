@@ -22,7 +22,8 @@
 # Test với Raspberry #
 
 ```
-pi@raspberrypi:/working/ok/pjreddie $ ./darknet detector test cfg/coco.data yolo_coco/yolov3-tiny.cfg yolo_coco/yolov3-tiny.weights data/dog.jpg
+pi@raspberrypi:/working/ok/pjreddie $ ./darknet detector test cfg/coco.data
+yolo_coco/yolov3-tiny.cfg yolo_coco/yolov3-tiny.weights data/dog.jpg
 layer     filters    size              input                output
     0 conv     16  3 x 3 / 1   416 x 416 x   3   ->   416 x 416 x  16  0.150 BFLOPs
 ....
@@ -31,7 +32,10 @@ data/dog.jpg: Predicted in 35.553814 seconds.
 Segmentation fault
 ```
 
-Kiểm tra bằng câu lệnh sau:
+Kiểm tra kiến trúc x64 hay x32 bằng câu lệnh sau:    
+```ARMv7``` là 32-bit.     
+```AMRv8``` là 64-bit.
+
 ```
 pi@raspberrypi:/working/ok/pjreddie $ lscpu
 Architecture:        armv7l
